@@ -220,9 +220,13 @@ const app = express()
 const port =
   Number(process.env.PORT || 4000)
 
+// NOTE: no trailing slash - the browser's Origin header
+// never has one, so a trailing "/" here would silently
+// break CORS matching and block every request from the
+// frontend.
 const frontendOrigin =
   process.env.FRONTEND_ORIGIN ||
-  'https://frontend-epfq2grcx-vaishnora-kraft.vercel.app/'
+  'https://frontend-epfq2grcx-vaishnora-kraft.vercel.app'
 
 // ---------------------------------------------------------
 // MULTER
@@ -251,9 +255,13 @@ const upload = multer({
 // MIDDLEWARE
 // ---------------------------------------------------------
 
+// Single CORS config for the whole app (the old code had
+// this registered twice - once here and once again after
+// the root route - which was redundant and confusing).
 app.use(
   cors({
     origin: frontendOrigin,
+    credentials: true,
   })
 )
 
@@ -277,11 +285,6 @@ app.get('/', (_request, response) => {
   })
 })
 
-
-app.use(cors({
-  origin: 'https://frontend-epfq2grcx-vaishnora-kraft.vercel.app/', 
-  credentials: true
-}));
 // ---------------------------------------------------------
 // HEALTH
 // ---------------------------------------------------------
