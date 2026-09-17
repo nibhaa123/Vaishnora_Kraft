@@ -277,6 +277,11 @@ app.get('/', (_request, response) => {
   })
 })
 
+const cors = require('cors');
+app.use(cors({
+  origin: 'https://frontend-epfq2grcx-vaishnora-kraft.vercel.app/', 
+  credentials: true
+}));
 // ---------------------------------------------------------
 // HEALTH
 // ---------------------------------------------------------
