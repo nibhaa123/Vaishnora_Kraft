@@ -1,12 +1,4 @@
-# Vaishnora Kraft backend
-
-## Run
-
-
-
-
-## MongoDB customer storage
-
+# Vaishnora Kraft
 Set `MONGODB_URI` in the root `.env` file before starting the backend. Optionally set `MONGODB_DATABASE`; it defaults to `vaishnora_kraft`.
 Use the root `.env.example` as the template. Do not commit real database credentials.
 Set `ADMIN_IDENTIFIER` and `ADMIN_PASSWORD` in `.env` for the separate administrator account. Admin credentials must never be committed to source control.
