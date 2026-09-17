@@ -2,13 +2,8 @@
 
 ## Run
 
-```powershell
-cd backend
-npm install
-npm run dev
-```
 
-The API runs at `http://localhost:4000`.
+
 
 ## MongoDB customer storage
 
