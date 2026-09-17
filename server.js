@@ -222,7 +222,7 @@ const port =
 
 const frontendOrigin =
   process.env.FRONTEND_ORIGIN ||
-  'http://localhost:5173'
+  'https://frontend-epfq2grcx-vaishnora-kraft.vercel.app/'
 
 // ---------------------------------------------------------
 // MULTER
